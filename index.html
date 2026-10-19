@@ -17,7 +17,6 @@
     </div>
 
     <div class="container">
-        <!-- Clean Configuration Bar -->
         <div class="config-bar">
             <div class="selector-group">
                 <label for="languageSelect">Target Engine:</label>
@@ -32,9 +31,7 @@
             <button onclick="analyzeCode()">Analyze Infrastructure</button>
         </div>
 
-        <!-- Visible Side-by-Side Editors -->
         <div class="editor-workspace">
-            <!-- Left Side: Source Terminal Input -->
             <div class="window-panel">
                 <div class="window-header">
                     <div class="window-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
@@ -52,7 +49,6 @@ function processData(arr) {
 }</textarea>
             </div>
 
-            <!-- Right Side: AI Feedback Output -->
             <div class="window-panel">
                 <div class="window-header">
                     <div class="window-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
@@ -63,6 +59,8 @@ function processData(arr) {
         </div>
     </div>
 
+    <!-- Official Google Web Bundle (Loads the global window.GoogleGenAI library smoothly) -->
+    <script src="https://unpkg.com"></script>
     <script src="script.js"></script>
 </body>
 </html>
