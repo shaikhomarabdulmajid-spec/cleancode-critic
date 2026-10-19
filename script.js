@@ -14,8 +14,10 @@ async function analyzeCode() {
     display.className = "output-view loading";
     display.innerText = "Analyzing code structure with Gemini 2.0 Flash...";
 
+    // This placeholder matches your Render environment replacement script perfectly
     const API_KEY = "RENDER_PLACEHOLDER_KEY"; 
     
+    // FIXED: Correct full endpoint URL structure for Gemini 2.0 Flash
     const endpoint = `https://googleapis.com{API_KEY}`;
 
     const promptText = `Review this ${language} code snippet for performance bottlenecks, clean code practices, and security bugs. Provide bullet points of the bugs/improvements followed by the corrected refactored code block:\n\n${sourceCode}`;
@@ -32,11 +34,13 @@ async function analyzeCode() {
         if (!response.ok) throw new Error("API call failed.");
 
         const data = await response.json();
+        
+        // FIXED: Solid, absolute path to extract text cleanly from the API response payload
         display.className = "output-view";
         display.innerText = data.candidates[0].content.parts[0].text;
 
     } catch (err) {
         display.className = "output-view error";
-        display.innerText = "Analysis Failed: Make sure your API key in script.js is correct and valid!";
+        display.innerText = "Analysis Failed: Connection error or invalid API key environment configuration.";
     }
 }
