@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ CleanCode Refactoring Critic AI</title>
+    <!-- Modern Typography and Code Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>⚡ CleanCode Refactoring Critic</h1>
+        <p>Instantly review performance flaws, bugs, and micro-optimizations</p>
+    </div>
+
+    <div class="container">
+        <!-- Where you paste and configure your API details -->
+        <div class="config-bar">
+            <div class="input-group">
+                <input type="password" id="apiKey" placeholder="Paste Gemini API Key here...">
+            </div>
+            <div>
+                <select id="languageSelect">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="TypeScript">TypeScript</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+            <button onclick="analyzeCode()">Analyze Infrastructure</button>
+        </div>
+
+        <div class="editor-workspace">
+            <!-- Left Side: Source Terminal Input -->
+            <div class="window-panel">
+                <div class="window-header">
+                    <div class="window-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <div class="window-title">source_terminal.file</div>
+                    <div></div>
+                </div>
+                <textarea id="codeInput" placeholder="// Paste dirty or unoptimized function blocks here...&#10;function process(arr) {&#10;    let res = [];&#10;    for(let i=0; i<arr.length; i++) {&#10;        if(arr[i] % 2 == 0) res.push(arr[i] * 2);&#10;    }&nsub;    return res;&#10;}"></textarea>
+            </div>
+
+            <!-- Right Side: AI Feedback Output -->
+            <div class="window-panel">
+                <div class="window-header">
+                    <div class="window-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+                    <div class="window-title">critic_ai_feedback</div>
+                    <div></div>
+                </div>
+                <div id="codeOutput" class="output-view">The AI system evaluation matrix will render here...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
